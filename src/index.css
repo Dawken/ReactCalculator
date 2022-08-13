@@ -1,13 +1,59 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(194deg, #000000 0%, #08071e 50%, #020a0e 100%);
+    background-attachment: fixed;
+    color:white;
+}
+main {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 200px;
+}
+.calculatorContainer {
+    min-height: 50vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    border-radius: 20px;
+    width: 370px;
+    text-align: center;
+}
+.result {
+    height: 75px;
+    flex-direction: column;
+    align-items: flex-end;
+    display: flex;
+    ;
+}
+.lastAction {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.action {
+    font-size: 40px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+button {
+    appearance: none;
+    border: none;
+    outline: none;
+    padding: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+    font-weight: 700;
+    display: inline-block;
+    height: 70px;
+    width: 80px;
+    font-size: 25px;
+    background-color: #050505;
+    border-radius: 8px;
+    color: white;
+    margin: 5px;
+}
+.operators {
+    margin-top: 25px;
 }
