@@ -1,11 +1,19 @@
 import React from 'react';
 
-const ResultsContainer = () => {
+type myProps = {
+    action: string,
+    lastAction: string
+}
+
+const ResultsContainer = ({action, lastAction}:myProps) => {
     return (
-        <div className="result">
-            <div className="lastAction">5</div>
-            <div className="action">20</div>
-        </div>
+        <>
+            <div className="result">
+                <div className="lastAction">{lastAction || '0'}</div>
+                <div className="action">{action || '0'}</div>
+            </div>
+        </>
+
     );
 };
 
