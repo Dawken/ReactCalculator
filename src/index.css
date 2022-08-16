@@ -19,11 +19,13 @@ main {
     text-align: center;
 }
 .result {
-    height: 75px;
+    min-height: 75px;
+    width: 370px;
     flex-direction: column;
     align-items: flex-end;
     display: flex;
-    ;
+    justify-content: space-between;
+    word-break: break-all;
 }
 .lastAction {
     font-size: 30px;
