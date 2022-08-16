@@ -12,14 +12,14 @@ const ButtonsContainer = ({action, setAction,setLastAction}:myProps) => {
     const ops=['÷', '×', '^', '+', '-'];
     const numbers=['0', '1', '2', '3','4','5','6','7','8','9'];
     const last = action[action.length-1];
-    const value = action.toString();
+    const result = action.toString();
+
     const multiplesymbols = ops.some((op) => {
         return op === last;
     });
 
     const updateValue = (value:string) => {
-        const result = action.toString();
-
+        const actualResult = `×${value}`;
         if(operators.includes(value) && result === '' || operators.includes(value) && operators.includes(result.slice(-1)) || value === ')' && last === '(') {
             return;
         }
@@ -27,14 +27,14 @@ const ButtonsContainer = ({action, setAction,setLastAction}:myProps) => {
             return;
         }
         if(value === '(' && !multiplesymbols && action !== '' && last !== '(') {
-            setAction(action.concat('×', value));
+            setAction(result + actualResult);
             return action;
         }
         if(last === '(' && operators.includes(value)) {
             return;
         }
         if(last === ')' && numbers.includes(value)) {
-            setAction(action.concat('×',value));
+            setAction(result + actualResult);
             return action;
         }
         if(value === ')' && (operators.includes(last) || last === '-')) {
@@ -54,7 +54,7 @@ const ButtonsContainer = ({action, setAction,setLastAction}:myProps) => {
         return action.toString();
     };
     const deleteAction = () => {
-        setAction(value.slice(0, -1));
+        setAction(result.slice(0, -1));
     };
 
     return (
